@@ -61,7 +61,7 @@ const generateReport = async (req, res) => {
         const { webSocketDebuggerUrl } = JSON.parse(resp.body);
         const browser = await puppeteer.connect({ browserWSEndpoint: webSocketDebuggerUrl });
 
-        // Run Lighthouse
+        // Run Lighthouse API
         const { lhr } = await lighthouse(req.query.url, { ...options, onlyCategories: req.query.categories ? req.query.categories.split(',') : ['performance', 'pwa', 'seo', 'performance', 'best-practices', 'accessibility'] }, customConfig);
         await browser.disconnect();
         await chrome.kill();
