@@ -1,6 +1,7 @@
 {
   "name": "webimizr",
   "private": true,
+  "homepage": "https://webimizr.herokuapp.com/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
