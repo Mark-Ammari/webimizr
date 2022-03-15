@@ -7,7 +7,7 @@ import request from 'request';
 import util from 'util';
 
 const options = {
-    chromeFlags: ['--headless'],
+    chromeFlags: ['--headless', '--no-sandbox'],
     logLevel: 'info',
     output: 'json'
 }
