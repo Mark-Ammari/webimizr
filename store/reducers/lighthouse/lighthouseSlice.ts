@@ -1,8 +1,8 @@
-import axios from 'axios';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Lighthouse } from 'types/lighthouse';
 import type { AppState, AppThunk } from '../../index';
 import DEFAULT_LIGHTHOUSE_DATA from 'types/defaultLighthouse';
+import baseURL from 'URL/URL';
 
 export interface LighthouseState {
   loading: boolean
@@ -43,9 +43,7 @@ export const { lighthouseStart, lighthouseFail, lighthouseSuccess } = lighthouse
 
 export const onFetchLighthouseReport = (url: string, emulation?: string): AppThunk => (dispatch) => {
   dispatch(lighthouseStart())
-  axios.get(`/api/v1/generate_report?url=${url}&emulation=${emulation}`, { headers: {
-    'Cache-Control': 'max-age=604800'
-  }})
+  baseURL.get(`/api/v1/generate_report?url=${url}&emulation=${emulation}`)
     .then(res => {
       dispatch(lighthouseSuccess(res.data))
     }).catch(err => {
