@@ -57,7 +57,7 @@ const generateReport = async (req, res) => {
         const chrome = await chromeLauncher.launch({ ...options, onlyCategories: req.query.categories ? req.query.categories.split(',') : ['performance', 'pwa', 'seo', 'performance', 'best-practices', 'accessibility'] });
         options.port = chrome.port;
 
-        const resp = await util.promisify(request)(process.env.NODE_ENV === "development" ? `http://localhost:${options.port}/json/version` : `https://webimizr.herokuapp.com:${options.port}/json/version`);
+        const resp = await util.promisify(request)(`http://localhost:${options.port}/json/version`);
         const { webSocketDebuggerUrl } = JSON.parse(resp.body);
         const browser = await puppeteer.connect({ browserWSEndpoint: webSocketDebuggerUrl });
 
@@ -981,7 +981,8 @@ const generateReport = async (req, res) => {
             },
             success: audits['network-requests']['scoreDisplayMode'] === 'error' ? false : true
         })
-    } catch {
+    } catch(error) {
+        console.log(error)
         res.status(500).send({
             "is-on-https": {
                 "title": "Uses HTTPS",
