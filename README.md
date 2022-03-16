@@ -12,6 +12,11 @@ Webimizr is a platform used to measure your website's performance and utilize go
 * *Repository* - [Github Repo][repository-url] (Repository space)
 * *Live Website* [Webimizr][cloud-provider-url] (Demo Website)
 
+## Current Issues
+
+* Using Heroku as a cloud provider will slow down HTTP Requests. 
+    - If you encounter errors even if you are typing the correct URL, It is likely due to Heroku and the solution would be to increase DYNOS.
+
 ## Showcase
 
 This project was designed to demonstrate:
