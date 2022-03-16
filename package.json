@@ -1,5 +1,6 @@
 {
   "name": "webimizr",
+  "version": "1.0.1",
   "private": true,
   "homepage": "https://webimizr.herokuapp.com/",
   "cacheDirectories": [".next/cache"],

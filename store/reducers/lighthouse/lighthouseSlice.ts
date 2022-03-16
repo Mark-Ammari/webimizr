@@ -3,6 +3,7 @@ import { Lighthouse } from 'types/lighthouse';
 import type { AppState, AppThunk } from '../../index';
 import DEFAULT_LIGHTHOUSE_DATA from 'types/defaultLighthouse';
 import baseURL from 'URL/URL';
+import axios from 'axios';
 
 export interface LighthouseState {
   loading: boolean
@@ -43,11 +44,11 @@ export const { lighthouseStart, lighthouseFail, lighthouseSuccess } = lighthouse
 
 export const onFetchLighthouseReport = (url: string, emulation?: string): AppThunk => (dispatch) => {
   dispatch(lighthouseStart())
-  baseURL.get(`/api/v1/generate_report?url=${url}&emulation=${emulation}`)
+  axios.get(`/api/v1/generate_report?url=${url}&emulation=${emulation}`)
     .then(res => {
       dispatch(lighthouseSuccess(res.data))
-    }).catch(err => {
-      dispatch(lighthouseFail(err.response.data))
+    }).catch((error) => {
+      dispatch(lighthouseFail(error.response.data))
     })
 };
 

@@ -981,9 +981,8 @@ const generateReport = async (req, res) => {
             },
             success: audits['network-requests']['scoreDisplayMode'] === 'error' ? false : true
         })
-    } catch(error) {
-        console.log(error)
-        res.status(500).send({
+    } catch {
+        res.status(400).send({
             "is-on-https": {
                 "title": "Uses HTTPS",
                 "description": "All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. [Learn more](https://web.dev/is-on-https/).",

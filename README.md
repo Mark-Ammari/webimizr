@@ -37,6 +37,8 @@ This project was designed to demonstrate:
 
 ## Release History
 
+* 1.0.1
+    * Fixed API Endpoint - would not return error to client.
 * 1.0.0
     * Released Webimizr to Production.
 ---
