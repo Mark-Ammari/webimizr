@@ -5,7 +5,7 @@ import AuditProgressBar from 'modules/home/AuditProgressBar';
 import { DesktopSpecifications, MobileSpecifications } from 'types/emulationType';
 import ConfigurationBar from 'modules/home/ConfigurationBar';
 import ReportSummary from 'modules/home/ReportSummary';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import AuditTablet from 'modules/home/AuditTablet';
 import SearchBar from 'components/SearchBar';
