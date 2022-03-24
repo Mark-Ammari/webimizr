@@ -2,7 +2,6 @@ import Heading from 'components/Heading';
 import React from 'react';
 import View from 'components/View';
 import PieGraph from 'public/charts/PieGraph';
-import { Lighthouse } from 'types/lighthouse';
 import { useSelector } from 'react-redux';
 import AuditBullet from 'public/charts/AuditBullet';
 import { loadPerformance, performanceData } from 'store/reducers/lighthouse/performanceSlice';

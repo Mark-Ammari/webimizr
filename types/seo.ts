@@ -17,7 +17,7 @@ export interface Seo {
     "structured-data": Metadata
     "percentage": string | number | null
     "message": string
-    "success": boolean
+    "success": boolean | string
 }
 
 export interface Metadata {

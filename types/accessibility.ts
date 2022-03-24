@@ -56,7 +56,7 @@ export interface Accessibility {
     "link-name": Metadata
     "percentage": string | number | null
     "message": string
-    "success": boolean
+    "success": boolean | string
 }
 
 export interface Metadata {

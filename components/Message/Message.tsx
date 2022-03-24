@@ -3,7 +3,7 @@ import React from 'react';
 
 interface Props {
     errorMessage?: string,
-    success?: boolean
+    success?: boolean | string
 }
 
 const Message: React.FC<Props> = ({ success, errorMessage }) => {

@@ -18,7 +18,7 @@ export interface BestPractices {
     "inspector-issues": Metadata
     "percentage": string | number | null
     "message": string
-    "success": boolean
+    "success": boolean | string
 }
 
 export interface Metadata {

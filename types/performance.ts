@@ -58,7 +58,7 @@ export type Performance = {
     "user-timings": Metadata
     "percentage": string | number | null
     "message": string
-    "success": boolean
+    "success": boolean | string
 }
 
 export interface Metadata {

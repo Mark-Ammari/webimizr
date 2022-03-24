@@ -13,7 +13,7 @@ export interface PWA {
     "service-worker": Metadata
     "percentage": string | number | null
     "message": string
-    "success": boolean
+    "success": boolean | string
 }
 
 export interface Metadata {
