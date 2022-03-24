@@ -3,7 +3,11 @@ import { useRouter } from 'next/router';
 import AuditBullet from 'public/charts/AuditBullet';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { lighthouseData, lighthouseError, loadLighthouse } from 'store/reducers/lighthouse/lighthouseSlice';
+import { accessibilityData, accessibilityError, loadAccessibility } from 'store/reducers/lighthouse/accessibilitySlice';
+import { bestPracticesData, bestPracticesError, loadBestPractices } from 'store/reducers/lighthouse/bestPracticesSlice';
+import { loadPerformance, performanceData, performanceError } from 'store/reducers/lighthouse/performanceSlice';
+import { loadPWA, pwaData, pwaError } from 'store/reducers/lighthouse/pwaSlice';
+import { loadSEO, seoData, seoError } from 'store/reducers/lighthouse/seoSlice';
 
 interface Props {
     url?: string | undefined
@@ -12,9 +16,24 @@ interface Props {
 
 const AuditProgressBar: React.FC<Props> = ({ url, jobResult }) => {
     const query = useRouter()
-    const loading = useSelector(loadLighthouse)
-    const report = useSelector(lighthouseData)
-    const error = useSelector(lighthouseError)
+
+    const loadingPerformance = useSelector(loadPerformance);
+    const loadingSEO = useSelector(loadSEO);
+    const loadingPWA = useSelector(loadPWA);
+    const loadingBestPractices = useSelector(loadBestPractices);
+    const loadingAccessibiility = useSelector(loadAccessibility);
+
+    const errorPerformance = useSelector(performanceError);
+    const errorSEO = useSelector(seoError);
+    const errorPWA = useSelector(pwaError);
+    const errorBestPractices = useSelector(bestPracticesError);
+    const errorAccessibility = useSelector(accessibilityError);
+
+    const performanceResult = useSelector(performanceData);
+    const seoResult = useSelector(seoData);
+    const pwaResult = useSelector(pwaData);
+    const bestPracticesResult = useSelector(bestPracticesData);
+    const accessibilityResult = useSelector(accessibilityData);
     return (
         <>
             <section id='audit-progress-bar-container' className='container'>
@@ -27,7 +46,7 @@ const AuditProgressBar: React.FC<Props> = ({ url, jobResult }) => {
                         <h2 className='title'>Job Queue</h2>
                         <div id='job-result'>
                             <AuditBullet margin='auto .5rem auto auto' />
-                            <p className='subheading'>{!query.query.url ? 'Idle' : loading ? 'Loading' : error || !report['success'] ? 'Failed' : 'Success'}</p>
+                            <p className='subheading'>{!query.query.url ? 'Idle' : (loadingPerformance || loadingSEO || loadingPWA || loadingBestPractices || loadingAccessibiility) ? 'Loading' : (errorPerformance || !performanceResult['success']) || (errorSEO || !seoResult['success']) || (errorPWA || !pwaResult['success']) || (errorBestPractices || !bestPracticesResult['success']) || (errorAccessibility || !accessibilityResult['success']) ? 'Failed' : 'Success'}</p>
                         </div>
                     </div>
                 </div>

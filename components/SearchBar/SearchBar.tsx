@@ -1,5 +1,11 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { onFetchAccessibilityReport } from 'store/reducers/lighthouse/accessibilitySlice';
+import { onFetchBestPracticesReport } from 'store/reducers/lighthouse/bestPracticesSlice';
+import { onFetchPerformanceReport } from 'store/reducers/lighthouse/performanceSlice';
+import { onFetchPWAReport } from 'store/reducers/lighthouse/pwaSlice';
+import { onFetchSEOReport } from 'store/reducers/lighthouse/seoSlice';
 
 const SearchBar: React.FC = () => {
     const router = useRouter()
@@ -10,20 +16,21 @@ const SearchBar: React.FC = () => {
         event.preventDefault()
         setURL(event.target.value)
     }
+
     const preventEnterKeypressHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === "Enter") {
             event.preventDefault()
             return false;
         }
     }
+
     const changeDevicesHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setSelect(event.target.value)
     }
+
     const SubmitAuditHandler = (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
         if (url.length > 0) {
-            router.push({
-                query: `url=${url}&emulation=${select}`
-            })
+            router.push({ query: `url=${url}&emulation=${select}` })
         }
     }
     return (
@@ -36,7 +43,7 @@ const SearchBar: React.FC = () => {
                         <option value="desktop">Desktop</option>
                         <option value="mobile">Mobile</option>
                     </select>
-                    <input id='button-field' name='Search' value='Search' type='button' onClick={SubmitAuditHandler}/>
+                    <input id='button-field' name='Search' value='Search' type='button' onClick={SubmitAuditHandler} />
                 </div>
             </form>
             <style jsx>

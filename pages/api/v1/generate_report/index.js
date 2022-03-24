@@ -956,7 +956,6 @@ const generateReport = async (req, res) => {
                 displayValue: audits["structured-data"]["scoreDisplayMode"] === "notApplicable" ? "N/A" : (audits["structured-data"]["errorMessage"] || "Manual Assessment Needed")
             },
             diagnostics: {
-                id: "diagnostics",
                 title: "Diagnostics",
                 description: "Collection of useful page vitals.",
                 details: [

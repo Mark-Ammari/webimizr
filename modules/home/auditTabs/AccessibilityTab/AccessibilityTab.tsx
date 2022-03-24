@@ -1,90 +1,76 @@
 import AuditList from 'components/AuditList';
 import List from 'components/List';
+import Message from 'components/Message';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { lighthouseData } from 'store/reducers/lighthouse/lighthouseSlice';
+import { accessibilityData } from 'store/reducers/lighthouse/accessibilitySlice';
 
 const AccessibilityTab: React.FC = () => {
-    const report = useSelector(lighthouseData)
+    const accessibilityResult = useSelector(accessibilityData)
 
     return (
         <>
-            <section id='performance-tab-container' className='section'>
+            <section id='accessibility-tab-container' className='section'>
+                <Message success={accessibilityResult.success} errorMessage={accessibilityResult.message} />
                 <h2 className='title'>Accessibility Audit</h2>
                 <List padding='var(--verticalSpacing) 0'>
-                    <AuditList title={report["aria-required-attr"].title} description={report["aria-required-attr"].description} score={report["aria-required-attr"].score} displayValue={report["aria-required-attr"].displayValue} />
-                    <AuditList title={report["logical-tab-order"].title} description={report["logical-tab-order"].description} score={report["logical-tab-order"].score} displayValue={report["logical-tab-order"].displayValue} />
-                    <AuditList title={report["focusable-controls"].title} description={report["focusable-controls"].description} score={report["focusable-controls"].score} displayValue={report["focusable-controls"].displayValue} />
-                    <AuditList title={report["interactive-element-affordance"].title} description={report["interactive-element-affordance"].description} score={report["interactive-element-affordance"].score} displayValue={report["interactive-element-affordance"].displayValue} />
-                    <AuditList title={report["managed-focus"].title} description={report["managed-focus"].description} score={report["managed-focus"].score} displayValue={report["managed-focus"].displayValue} />
-                    <AuditList title={report["focus-traps"].title} description={report["focus-traps"].description} score={report["focus-traps"].score} displayValue={report["focus-traps"].displayValue} />
-                    <AuditList title={report["custom-controls-labels"].title} description={report["custom-controls-labels"].description} score={report["custom-controls-labels"].score} displayValue={report["custom-controls-labels"].displayValue} />
-                    <AuditList title={report["custom-controls-roles"].title} description={report["custom-controls-roles"].description} score={report["custom-controls-roles"].score} displayValue={report["custom-controls-roles"].displayValue} />
-                    <AuditList title={report["visual-order-follows-dom"].title} description={report["visual-order-follows-dom"].description} score={report["visual-order-follows-dom"].score} displayValue={report["visual-order-follows-dom"].displayValue} />
-                    <AuditList title={report["offscreen-content-hidden"].title} description={report["offscreen-content-hidden"].description} score={report["offscreen-content-hidden"].score} displayValue={report["offscreen-content-hidden"].displayValue} />
-                    <AuditList title={report["use-landmarks"].title} description={report["use-landmarks"].description} score={report["use-landmarks"].score} displayValue={report["use-landmarks"].displayValue} />
-                    <AuditList title={report["aria-allowed-attr"].title} description={report["aria-allowed-attr"].description} score={report["aria-allowed-attr"].score} displayValue={report["aria-allowed-attr"].displayValue} />
-                    <AuditList title={report["aria-hidden-body"].title} description={report["aria-hidden-body"].description} score={report["aria-hidden-body"].score} displayValue={report["aria-hidden-body"].displayValue} />
-                    <AuditList title={report["aria-required-children"].title} description={report["aria-required-children"].description} score={report["aria-required-children"].score} displayValue={report["aria-required-children"].displayValue} />
-                    <AuditList title={report["aria-roles"].title} description={report["aria-roles"].description} score={report["aria-roles"].score} displayValue={report["aria-roles"].displayValue} />
-                    <AuditList title={report["aria-valid-attr-value"].title} description={report["aria-valid-attr-value"].description} score={report["aria-valid-attr-value"].score} displayValue={report["aria-valid-attr-value"].displayValue} />
-                    <AuditList title={report["aria-valid-attr"].title} description={report["aria-valid-attr"].description} score={report["aria-valid-attr"].score} displayValue={report["aria-valid-attr"].displayValue} />
-                    <AuditList title={report["button-name"].title} description={report["button-name"].description} score={report["button-name"].score} displayValue={report["button-name"].displayValue} />
-                    <AuditList title={report["duplicate-id-aria"].title} description={report["duplicate-id-aria"].description} score={report["duplicate-id-aria"].score} displayValue={report["duplicate-id-aria"].displayValue} />
-                    <AuditList title={report["image-alt"].title} description={report["image-alt"].description} score={report["image-alt"].score} displayValue={report["image-alt"].displayValue} />
-                    <AuditList title={report["label"].title} description={report["label"].description} score={report["label"].score} displayValue={report["label"].displayValue} />
-                    <AuditList title={report["aria-command-name"].title} description={report["aria-command-name"].description} score={report["aria-command-name"].score} displayValue={report["aria-command-name"].displayValue} />
-                    <AuditList title={report["bypass"].title} description={report["bypass"].description} score={report["bypass"].score} displayValue={report["bypass"].displayValue} />
-                    <AuditList title={report["color-contrast"].title} description={report["color-contrast"].description} score={report["color-contrast"].score} displayValue={report["color-contrast"].displayValue} />
-                    <AuditList title={report["document-title"].title} description={report["document-title"].description} score={report["document-title"].score} displayValue={report["document-title"].displayValue} />
-                    <AuditList title={report["duplicate-id-active"].title} description={report["duplicate-id-active"].description} score={report["duplicate-id-active"].score} displayValue={report["duplicate-id-active"].displayValue} />
-                    <AuditList title={report["html-has-lang"].title} description={report["html-has-lang"].description} score={report["html-has-lang"].score} displayValue={report["html-has-lang"].displayValue} />
-                    <AuditList title={report["html-lang-valid"].title} description={report["html-lang-valid"].description} score={report["html-lang-valid"].score} displayValue={report["html-lang-valid"].displayValue} />
-                    <AuditList title={report["link-name"].title} description={report["link-name"].description} score={report["link-name"].score} displayValue={report["link-name"].displayValue} />
-                    <AuditList title={report["tabindex"].title} description={report["tabindex"].description} score={report["tabindex"].score} displayValue={report["tabindex"].displayValue} />
-                    <AuditList title={report["accesskeys"].title} description={report["accesskeys"].description} score={report["accesskeys"].score} displayValue={report["accesskeys"].displayValue} />
-                    <AuditList title={report["aria-hidden-focus"].title} description={report["aria-hidden-focus"].description} score={report["aria-hidden-focus"].score} displayValue={report["aria-hidden-focus"].displayValue} />
-                    <AuditList title={report["aria-input-field-name"].title} description={report["aria-input-field-name"].description} score={report["aria-input-field-name"].score} displayValue={report["aria-input-field-name"].displayValue} />
-                    <AuditList title={report["aria-meter-name"].title} description={report["aria-meter-name"].description} score={report["aria-meter-name"].score} displayValue={report["aria-meter-name"].displayValue} />
-                    <AuditList title={report["aria-progressbar-name"].title} description={report["aria-progressbar-name"].description} score={report["aria-progressbar-name"].score} displayValue={report["aria-progressbar-name"].displayValue} />
-                    <AuditList title={report["aria-required-parent"].title} description={report["aria-required-parent"].description} score={report["aria-required-parent"].score} displayValue={report["aria-required-parent"].displayValue} />
-                    <AuditList title={report["aria-toggle-field-name"].title} description={report["aria-toggle-field-name"].description} score={report["aria-toggle-field-name"].score} displayValue={report["aria-toggle-field-name"].displayValue} />
-                    <AuditList title={report["aria-tooltip-name"].title} description={report["aria-tooltip-name"].description} score={report["aria-tooltip-name"].score} displayValue={report["aria-tooltip-name"].displayValue} />
-                    <AuditList title={report["aria-treeitem-name"].title} description={report["aria-treeitem-name"].description} score={report["aria-treeitem-name"].score} displayValue={report["aria-treeitem-name"].displayValue} />
-                    <AuditList title={report["definition-list"].title} description={report["definition-list"].description} score={report["definition-list"].score} displayValue={report["definition-list"].displayValue} />
-                    <AuditList title={report["dlitem"].title} description={report["dlitem"].description} score={report["dlitem"].score} displayValue={report["dlitem"].displayValue} />
-                    <AuditList title={report["form-field-multiple-labels"].title} description={report["form-field-multiple-labels"].description} score={report["form-field-multiple-labels"].score} displayValue={report["form-field-multiple-labels"].displayValue} />
-                    <AuditList title={report["frame-title"].title} description={report["frame-title"].description} score={report["frame-title"].score} displayValue={report["frame-title"].displayValue} />
-                    <AuditList title={report["heading-order"].title} description={report["heading-order"].description} score={report["heading-order"].score} displayValue={report["heading-order"].displayValue} />
-                    <AuditList title={report["input-image-alt"].title} description={report["input-image-alt"].description} score={report["input-image-alt"].score} displayValue={report["input-image-alt"].displayValue} />
-                    <AuditList title={report["list"].title} description={report["list"].description} score={report["list"].score} displayValue={report["list"].displayValue} />
-                    <AuditList title={report["listitem"].title} description={report["listitem"].description} score={report["listitem"].score} displayValue={report["listitem"].displayValue} />
-                    <AuditList title={report["meta-refresh"].title} description={report["meta-refresh"].description} score={report["meta-refresh"].score} displayValue={report["meta-refresh"].displayValue} />
-                    <AuditList title={report["meta-viewport"].title} description={report["meta-viewport"].description} score={report["meta-viewport"].score} displayValue={report["meta-viewport"].displayValue} />
-                    <AuditList title={report["object-alt"].title} description={report["object-alt"].description} score={report["object-alt"].score} displayValue={report["object-alt"].displayValue} />
-                    <AuditList title={report["td-headers-attr"].title} description={report["td-headers-attr"].description} score={report["td-headers-attr"].score} displayValue={report["td-headers-attr"].displayValue} />
-                    <AuditList title={report["th-has-data-cells"].title} description={report["th-has-data-cells"].description} score={report["th-has-data-cells"].score} displayValue={report["th-has-data-cells"].displayValue} />
-                    <AuditList title={report["valid-lang"].title} description={report["doctype"].description} score={report["doctype"].score} displayValue={report["doctype"].displayValue} />
-                    <AuditList title={report["video-caption"].title} description={report["charset"].description} score={report["charset"].score} displayValue={report["charset"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-required-attr"].title} description={accessibilityResult["aria-required-attr"].description} score={accessibilityResult["aria-required-attr"].score} displayValue={accessibilityResult["aria-required-attr"].displayValue} />
+                    <AuditList title={accessibilityResult["logical-tab-order"].title} description={accessibilityResult["logical-tab-order"].description} score={accessibilityResult["logical-tab-order"].score} displayValue={accessibilityResult["logical-tab-order"].displayValue} />
+                    <AuditList title={accessibilityResult["focusable-controls"].title} description={accessibilityResult["focusable-controls"].description} score={accessibilityResult["focusable-controls"].score} displayValue={accessibilityResult["focusable-controls"].displayValue} />
+                    <AuditList title={accessibilityResult["interactive-element-affordance"].title} description={accessibilityResult["interactive-element-affordance"].description} score={accessibilityResult["interactive-element-affordance"].score} displayValue={accessibilityResult["interactive-element-affordance"].displayValue} />
+                    <AuditList title={accessibilityResult["managed-focus"].title} description={accessibilityResult["managed-focus"].description} score={accessibilityResult["managed-focus"].score} displayValue={accessibilityResult["managed-focus"].displayValue} />
+                    <AuditList title={accessibilityResult["focus-traps"].title} description={accessibilityResult["focus-traps"].description} score={accessibilityResult["focus-traps"].score} displayValue={accessibilityResult["focus-traps"].displayValue} />
+                    <AuditList title={accessibilityResult["custom-controls-labels"].title} description={accessibilityResult["custom-controls-labels"].description} score={accessibilityResult["custom-controls-labels"].score} displayValue={accessibilityResult["custom-controls-labels"].displayValue} />
+                    <AuditList title={accessibilityResult["custom-controls-roles"].title} description={accessibilityResult["custom-controls-roles"].description} score={accessibilityResult["custom-controls-roles"].score} displayValue={accessibilityResult["custom-controls-roles"].displayValue} />
+                    <AuditList title={accessibilityResult["visual-order-follows-dom"].title} description={accessibilityResult["visual-order-follows-dom"].description} score={accessibilityResult["visual-order-follows-dom"].score} displayValue={accessibilityResult["visual-order-follows-dom"].displayValue} />
+                    <AuditList title={accessibilityResult["offscreen-content-hidden"].title} description={accessibilityResult["offscreen-content-hidden"].description} score={accessibilityResult["offscreen-content-hidden"].score} displayValue={accessibilityResult["offscreen-content-hidden"].displayValue} />
+                    <AuditList title={accessibilityResult["use-landmarks"].title} description={accessibilityResult["use-landmarks"].description} score={accessibilityResult["use-landmarks"].score} displayValue={accessibilityResult["use-landmarks"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-allowed-attr"].title} description={accessibilityResult["aria-allowed-attr"].description} score={accessibilityResult["aria-allowed-attr"].score} displayValue={accessibilityResult["aria-allowed-attr"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-hidden-body"].title} description={accessibilityResult["aria-hidden-body"].description} score={accessibilityResult["aria-hidden-body"].score} displayValue={accessibilityResult["aria-hidden-body"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-required-children"].title} description={accessibilityResult["aria-required-children"].description} score={accessibilityResult["aria-required-children"].score} displayValue={accessibilityResult["aria-required-children"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-roles"].title} description={accessibilityResult["aria-roles"].description} score={accessibilityResult["aria-roles"].score} displayValue={accessibilityResult["aria-roles"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-valid-attr-value"].title} description={accessibilityResult["aria-valid-attr-value"].description} score={accessibilityResult["aria-valid-attr-value"].score} displayValue={accessibilityResult["aria-valid-attr-value"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-valid-attr"].title} description={accessibilityResult["aria-valid-attr"].description} score={accessibilityResult["aria-valid-attr"].score} displayValue={accessibilityResult["aria-valid-attr"].displayValue} />
+                    <AuditList title={accessibilityResult["button-name"].title} description={accessibilityResult["button-name"].description} score={accessibilityResult["button-name"].score} displayValue={accessibilityResult["button-name"].displayValue} />
+                    <AuditList title={accessibilityResult["duplicate-id-aria"].title} description={accessibilityResult["duplicate-id-aria"].description} score={accessibilityResult["duplicate-id-aria"].score} displayValue={accessibilityResult["duplicate-id-aria"].displayValue} />
+                    <AuditList title={accessibilityResult["image-alt"].title} description={accessibilityResult["image-alt"].description} score={accessibilityResult["image-alt"].score} displayValue={accessibilityResult["image-alt"].displayValue} />
+                    <AuditList title={accessibilityResult["label"].title} description={accessibilityResult["label"].description} score={accessibilityResult["label"].score} displayValue={accessibilityResult["label"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-command-name"].title} description={accessibilityResult["aria-command-name"].description} score={accessibilityResult["aria-command-name"].score} displayValue={accessibilityResult["aria-command-name"].displayValue} />
+                    <AuditList title={accessibilityResult["bypass"].title} description={accessibilityResult["bypass"].description} score={accessibilityResult["bypass"].score} displayValue={accessibilityResult["bypass"].displayValue} />
+                    <AuditList title={accessibilityResult["color-contrast"].title} description={accessibilityResult["color-contrast"].description} score={accessibilityResult["color-contrast"].score} displayValue={accessibilityResult["color-contrast"].displayValue} />
+                    <AuditList title={accessibilityResult["document-title"].title} description={accessibilityResult["document-title"].description} score={accessibilityResult["document-title"].score} displayValue={accessibilityResult["document-title"].displayValue} />
+                    <AuditList title={accessibilityResult["duplicate-id-active"].title} description={accessibilityResult["duplicate-id-active"].description} score={accessibilityResult["duplicate-id-active"].score} displayValue={accessibilityResult["duplicate-id-active"].displayValue} />
+                    <AuditList title={accessibilityResult["html-has-lang"].title} description={accessibilityResult["html-has-lang"].description} score={accessibilityResult["html-has-lang"].score} displayValue={accessibilityResult["html-has-lang"].displayValue} />
+                    <AuditList title={accessibilityResult["html-lang-valid"].title} description={accessibilityResult["html-lang-valid"].description} score={accessibilityResult["html-lang-valid"].score} displayValue={accessibilityResult["html-lang-valid"].displayValue} />
+                    <AuditList title={accessibilityResult["link-name"].title} description={accessibilityResult["link-name"].description} score={accessibilityResult["link-name"].score} displayValue={accessibilityResult["link-name"].displayValue} />
+                    <AuditList title={accessibilityResult["tabindex"].title} description={accessibilityResult["tabindex"].description} score={accessibilityResult["tabindex"].score} displayValue={accessibilityResult["tabindex"].displayValue} />
+                    <AuditList title={accessibilityResult["accesskeys"].title} description={accessibilityResult["accesskeys"].description} score={accessibilityResult["accesskeys"].score} displayValue={accessibilityResult["accesskeys"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-hidden-focus"].title} description={accessibilityResult["aria-hidden-focus"].description} score={accessibilityResult["aria-hidden-focus"].score} displayValue={accessibilityResult["aria-hidden-focus"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-input-field-name"].title} description={accessibilityResult["aria-input-field-name"].description} score={accessibilityResult["aria-input-field-name"].score} displayValue={accessibilityResult["aria-input-field-name"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-meter-name"].title} description={accessibilityResult["aria-meter-name"].description} score={accessibilityResult["aria-meter-name"].score} displayValue={accessibilityResult["aria-meter-name"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-progressbar-name"].title} description={accessibilityResult["aria-progressbar-name"].description} score={accessibilityResult["aria-progressbar-name"].score} displayValue={accessibilityResult["aria-progressbar-name"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-required-parent"].title} description={accessibilityResult["aria-required-parent"].description} score={accessibilityResult["aria-required-parent"].score} displayValue={accessibilityResult["aria-required-parent"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-toggle-field-name"].title} description={accessibilityResult["aria-toggle-field-name"].description} score={accessibilityResult["aria-toggle-field-name"].score} displayValue={accessibilityResult["aria-toggle-field-name"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-tooltip-name"].title} description={accessibilityResult["aria-tooltip-name"].description} score={accessibilityResult["aria-tooltip-name"].score} displayValue={accessibilityResult["aria-tooltip-name"].displayValue} />
+                    <AuditList title={accessibilityResult["aria-treeitem-name"].title} description={accessibilityResult["aria-treeitem-name"].description} score={accessibilityResult["aria-treeitem-name"].score} displayValue={accessibilityResult["aria-treeitem-name"].displayValue} />
+                    <AuditList title={accessibilityResult["definition-list"].title} description={accessibilityResult["definition-list"].description} score={accessibilityResult["definition-list"].score} displayValue={accessibilityResult["definition-list"].displayValue} />
+                    <AuditList title={accessibilityResult["dlitem"].title} description={accessibilityResult["dlitem"].description} score={accessibilityResult["dlitem"].score} displayValue={accessibilityResult["dlitem"].displayValue} />
+                    <AuditList title={accessibilityResult["form-field-multiple-labels"].title} description={accessibilityResult["form-field-multiple-labels"].description} score={accessibilityResult["form-field-multiple-labels"].score} displayValue={accessibilityResult["form-field-multiple-labels"].displayValue} />
+                    <AuditList title={accessibilityResult["frame-title"].title} description={accessibilityResult["frame-title"].description} score={accessibilityResult["frame-title"].score} displayValue={accessibilityResult["frame-title"].displayValue} />
+                    <AuditList title={accessibilityResult["heading-order"].title} description={accessibilityResult["heading-order"].description} score={accessibilityResult["heading-order"].score} displayValue={accessibilityResult["heading-order"].displayValue} />
+                    <AuditList title={accessibilityResult["input-image-alt"].title} description={accessibilityResult["input-image-alt"].description} score={accessibilityResult["input-image-alt"].score} displayValue={accessibilityResult["input-image-alt"].displayValue} />
+                    <AuditList title={accessibilityResult["list"].title} description={accessibilityResult["list"].description} score={accessibilityResult["list"].score} displayValue={accessibilityResult["list"].displayValue} />
+                    <AuditList title={accessibilityResult["listitem"].title} description={accessibilityResult["listitem"].description} score={accessibilityResult["listitem"].score} displayValue={accessibilityResult["listitem"].displayValue} />
+                    <AuditList title={accessibilityResult["meta-refresh"].title} description={accessibilityResult["meta-refresh"].description} score={accessibilityResult["meta-refresh"].score} displayValue={accessibilityResult["meta-refresh"].displayValue} />
+                    <AuditList title={accessibilityResult["meta-viewport"].title} description={accessibilityResult["meta-viewport"].description} score={accessibilityResult["meta-viewport"].score} displayValue={accessibilityResult["meta-viewport"].displayValue} />
+                    <AuditList title={accessibilityResult["object-alt"].title} description={accessibilityResult["object-alt"].description} score={accessibilityResult["object-alt"].score} displayValue={accessibilityResult["object-alt"].displayValue} />
+                    <AuditList title={accessibilityResult["td-headers-attr"].title} description={accessibilityResult["td-headers-attr"].description} score={accessibilityResult["td-headers-attr"].score} displayValue={accessibilityResult["td-headers-attr"].displayValue} />
+                    <AuditList title={accessibilityResult["th-has-data-cells"].title} description={accessibilityResult["th-has-data-cells"].description} score={accessibilityResult["th-has-data-cells"].score} displayValue={accessibilityResult["th-has-data-cells"].displayValue} />
                 </List>
             </section>
             <style jsx>
-                {`#performance-tab-container {
+                {`#accessibility-tab-container {
                     overflow: hidden;
-                }
-                #performance-list {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                    gap: var(--spacing);
-                    width: 100%;
-                    margin-bottom: 2rem;
-                }
-                .list-item {
-                    width: 100%;
-                    padding: var(--spacing);
-                    display: flex;
-                    flex-direction: column;
-                    border-top: 1px solid var(--accentColor)
                 }
                
                 .title {

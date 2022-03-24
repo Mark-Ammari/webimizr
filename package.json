@@ -1,6 +1,6 @@
 {
   "name": "webimizr",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "private": true,
   "homepage": "https://webimizr.herokuapp.com/",
   "cacheDirectories": [
@@ -17,6 +17,7 @@
     "@reduxjs/toolkit": "^1.7.2",
     "axios": "^0.25.0",
     "chrome-launcher": "^0.15.0",
+    "firebase-tools": "^10.4.0",
     "lighthouse": "^9.3.1",
     "next": "12.0.9",
     "puppeteer": "^13.1.3",

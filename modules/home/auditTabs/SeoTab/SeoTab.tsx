@@ -1,51 +1,38 @@
 import AuditList from 'components/AuditList';
 import List from 'components/List';
+import Message from 'components/Message';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { lighthouseData } from 'store/reducers/lighthouse/lighthouseSlice';
+import { seoData } from 'store/reducers/lighthouse/seoSlice';
 
 const SeoTab: React.FC = () => {
-    const report = useSelector(lighthouseData)
-
+    const seoResult = useSelector(seoData);
     return (
         <>
-            <section id='performance-tab-container' className='section'>
-                <h2 className='title'>SEO Audit</h2>
+            <section id='seo-tab-container' className='section'>
+                <Message success={seoResult.success} errorMessage={seoResult.message} />
+                <h2 className='title'>Search Engine Optimization Audit</h2>
                 <List padding='var(--verticalSpacing) 0'>
-                    <AuditList title={report["viewport"].title} description={report["viewport"].description} score={report["viewport"].score} displayValue={report["viewport"].displayValue} />
-                    <AuditList title={report["meta-description"].title} description={report["meta-description"].description} score={report["meta-description"].score} displayValue={report["meta-description"].displayValue} />
-                    <AuditList title={report["structured-data"].title} description={report["structured-data"].description} score={report["structured-data"].score} displayValue={report["structured-data"].displayValue} />
-                    <AuditList title={report["document-title"].title} description={report["document-title"].description} score={report["document-title"].score} displayValue={report["document-title"].displayValue} />
-                    <AuditList title={report["http-status-code"].title} description={report["http-status-code"].description} score={report["http-status-code"].score} displayValue={report["http-status-code"].displayValue} />
-                    <AuditList title={report["link-text"].title} description={report["link-text"].description} score={report["link-text"].score} displayValue={report["link-text"].displayValue} />
-                    <AuditList title={report["crawlable-anchors"].title} description={report["crawlable-anchors"].description} score={report["crawlable-anchors"].score} displayValue={report["crawlable-anchors"].displayValue} />
-                    <AuditList title={report["is-crawlable"].title} description={report["is-crawlable"].description} score={report["is-crawlable"].score} displayValue={report["is-crawlable"].displayValue} />
-                    <AuditList title={report["robots-txt"].title} description={report["robots-txt"].description} score={report["robots-txt"].score} displayValue={report["robots-txt"].displayValue} />
-                    <AuditList title={report["image-alt"].title} description={report["image-alt"].description} score={report["image-alt"].score} displayValue={report["image-alt"].displayValue} />
-                    <AuditList title={report["hreflang"].title} description={report["hreflang"].description} score={report["hreflang"].score} displayValue={report["hreflang"].displayValue} />
-                    <AuditList title={report["plugins"].title} description={report["plugins"].description} score={report["plugins"].score} displayValue={report["plugins"].displayValue} />
-                    <AuditList title={report["canonical"].title} description={report["canonical"].description} score={report["canonical"].score} displayValue={report["canonical"].displayValue} />
-                    <AuditList title={report["font-size"].title} description={report["font-size"].description} score={report["font-size"].score} displayValue={report["font-size"].displayValue} />
-                    <AuditList title={report["tap-targets"].title} description={report["tap-targets"].description} score={report["tap-targets"].score} displayValue={report["tap-targets"].displayValue} />
+                    <AuditList title={seoResult["viewport"].title} description={seoResult["viewport"].description} score={seoResult["viewport"].score} displayValue={seoResult["viewport"].displayValue} />
+                    <AuditList title={seoResult["meta-description"].title} description={seoResult["meta-description"].description} score={seoResult["meta-description"].score} displayValue={seoResult["meta-description"].displayValue} />
+                    <AuditList title={seoResult["structured-data"].title} description={seoResult["structured-data"].description} score={seoResult["structured-data"].score} displayValue={seoResult["structured-data"].displayValue} />
+                    <AuditList title={seoResult["document-title"].title} description={seoResult["document-title"].description} score={seoResult["document-title"].score} displayValue={seoResult["document-title"].displayValue} />
+                    <AuditList title={seoResult["http-status-code"].title} description={seoResult["http-status-code"].description} score={seoResult["http-status-code"].score} displayValue={seoResult["http-status-code"].displayValue} />
+                    <AuditList title={seoResult["link-text"].title} description={seoResult["link-text"].description} score={seoResult["link-text"].score} displayValue={seoResult["link-text"].displayValue} />
+                    <AuditList title={seoResult["crawlable-anchors"].title} description={seoResult["crawlable-anchors"].description} score={seoResult["crawlable-anchors"].score} displayValue={seoResult["crawlable-anchors"].displayValue} />
+                    <AuditList title={seoResult["is-crawlable"].title} description={seoResult["is-crawlable"].description} score={seoResult["is-crawlable"].score} displayValue={seoResult["is-crawlable"].displayValue} />
+                    <AuditList title={seoResult["robots-txt"].title} description={seoResult["robots-txt"].description} score={seoResult["robots-txt"].score} displayValue={seoResult["robots-txt"].displayValue} />
+                    <AuditList title={seoResult["image-alt"].title} description={seoResult["image-alt"].description} score={seoResult["image-alt"].score} displayValue={seoResult["image-alt"].displayValue} />
+                    <AuditList title={seoResult["hreflang"].title} description={seoResult["hreflang"].description} score={seoResult["hreflang"].score} displayValue={seoResult["hreflang"].displayValue} />
+                    <AuditList title={seoResult["plugins"].title} description={seoResult["plugins"].description} score={seoResult["plugins"].score} displayValue={seoResult["plugins"].displayValue} />
+                    <AuditList title={seoResult["canonical"].title} description={seoResult["canonical"].description} score={seoResult["canonical"].score} displayValue={seoResult["canonical"].displayValue} />
+                    <AuditList title={seoResult["font-size"].title} description={seoResult["font-size"].description} score={seoResult["font-size"].score} displayValue={seoResult["font-size"].displayValue} />
+                    <AuditList title={seoResult["tap-targets"].title} description={seoResult["tap-targets"].description} score={seoResult["tap-targets"].score} displayValue={seoResult["tap-targets"].displayValue} />
                 </List>
             </section>
             <style jsx>
-                {`#performance-tab-container {
+                {`#seo-tab-container {
                     overflow: hidden;
-                }
-                #performance-list {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                    gap: var(--spacing);
-                    width: 100%;
-                    margin-bottom: 2rem;
-                }
-                .list-item {
-                    width: 100%;
-                    padding: var(--spacing);
-                    display: flex;
-                    flex-direction: column;
-                    border-top: 1px solid var(--accentColor)
                 }
                
                 .title {

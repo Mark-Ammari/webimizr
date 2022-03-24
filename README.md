@@ -34,14 +34,16 @@ This project was designed to demonstrate:
   * Lighthouse API
 * Prominent Libraries/Packages
   * axios
-  * chrome-launcher
-  * lighthouse
-  * puppeteer
+  * chrome-launcher - (No longer using since it uses too much of Heroku's CPU.)
+  * lighthouse - (No longer using since it uses too much of Heroku's CPU.)
+  * puppeteer - (No longer using since it uses too much of Heroku's CPU.)
   * react-redux / redux / redux-toolkit
   * recharts
 
 ## Release History
 
+* 2.0.0
+    * Used promises to fix request timeout and using googles lighthouse API instead of puppeteer and chrome-launcher.
 * 1.0.1
     * Fixed API Endpoint - would not return error to client.
 * 1.0.0

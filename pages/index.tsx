@@ -7,21 +7,27 @@ import ConfigurationBar from 'modules/home/ConfigurationBar';
 import ReportSummary from 'modules/home/ReportSummary';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
-import { lighthouseData, onFetchLighthouseReport } from 'store/reducers/lighthouse/lighthouseSlice';
 import AuditTablet from 'modules/home/AuditTablet';
 import SearchBar from 'components/SearchBar';
+import { onFetchPerformanceReport } from 'store/reducers/lighthouse/performanceSlice';
+import { onFetchSEOReport } from 'store/reducers/lighthouse/seoSlice';
+import { onFetchPWAReport } from 'store/reducers/lighthouse/pwaSlice';
+import { onFetchBestPracticesReport } from 'store/reducers/lighthouse/bestPracticesSlice';
+import { onFetchAccessibilityReport } from 'store/reducers/lighthouse/accessibilitySlice';
 
 // https://www.webimizr.com
 const Homepage: NextPage = () => {
-  const dispatch = useDispatch()
   const router = useRouter()
-  const data = useSelector(lighthouseData)
+  const dispatch = useDispatch()
   React.useEffect(() => {
     if (router.query.url) {
-      dispatch(onFetchLighthouseReport(router.query.url as string, router.query.emulation as string))
+      dispatch(onFetchPerformanceReport(router.query.url as string, router.query.emulation as string))
+      dispatch(onFetchSEOReport(router.query.url as string, router.query.emulation as string))
+      dispatch(onFetchPWAReport(router.query.url as string, router.query.emulation as string))
+      dispatch(onFetchBestPracticesReport(router.query.url as string, router.query.emulation as string))
+      dispatch(onFetchAccessibilityReport(router.query.url as string, router.query.emulation as string))
     }
-  }, [router.query.url, router.query.emulation, dispatch])
-
+  }, [dispatch, router.query.url, router.query.emulation])
   return (
     <main className='main'>
       <SearchBar />
@@ -29,9 +35,7 @@ const Homepage: NextPage = () => {
       <ConfigurationBar
         specifications={router.query.emulation === 'mobile' ? MobileSpecifications : DesktopSpecifications}
       />
-      <ReportSummary
-        reportSummary={data}
-      />
+      <ReportSummary />
       <AuditTablet />
     </main>
   )

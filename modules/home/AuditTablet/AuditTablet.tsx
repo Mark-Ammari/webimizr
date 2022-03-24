@@ -24,10 +24,10 @@ const AuditTablet: React.FC<Props> = ({ url, jobResult }) => {
                     <Tablet
                         data={[
                             { title: 'Performance', element: <PerformanceTab /> },
-                            { title: 'Progressive', element: <ProgressiveTab /> },
                             { title: 'SEO Analysis', element: <SeoTab /> },
                             { title: 'Best Practices', element: <BestPracticesTab /> },
                             { title: 'Accessibility', element: <AccessibilityTab /> },
+                            { title: 'Progressive', element: <ProgressiveTab /> },
                         ]}
                     />
                 </div>

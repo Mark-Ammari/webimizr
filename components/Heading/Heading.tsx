@@ -16,10 +16,7 @@ const Heading: React.FC<Props> = ({ title, subHeading }) => {
                 </div>
             </section>
             <style jsx>
-                {`.heading {
-                    
-                }
-                .divider {
+                {`.divider {
                     width: 100px;
                     background-color: var(--accentcolor);
                     background: linear-gradient(90deg, rgba(219,226,239,1) 20%, rgba(0,0,0,0) 100%);

@@ -1,11 +1,19 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
-import lighthouseReducer from './reducers/lighthouse/lighthouseSlice'
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import performanceReducer from './reducers/lighthouse/performanceSlice';
+import seoReducer from './reducers/lighthouse/seoSlice';
+import bestPracticesReducer from './reducers/lighthouse/bestPracticesSlice';
+import pwaReducer from './reducers/lighthouse/pwaSlice';
+import accessibilityReducer from './reducers/lighthouse/accessibilitySlice';
 
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      lighthouse: lighthouseReducer,
+      performance: performanceReducer,
+      seo: seoReducer,
+      bestPractices: bestPracticesReducer,
+      pwa: pwaReducer,
+      accessibility: accessibilityReducer
     }
   })
 }

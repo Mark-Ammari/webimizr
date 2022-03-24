@@ -38,7 +38,7 @@ const PieGraph: React.FC<Props> = ({ data, color, accentColor, label }) => {
                             strokeWidth={0}
                             cornerRadius={0}
                         >
-                            <Label fill={data[0].value! >= 90 ? 'var(--successColor)' : data[0].value! >= 50 && data[0].value! < 90 ? 'var(--warningColor)' : data[0].value! >= 1 && data[0].value! < 50 ? 'var(--failedColor)' : '#888'} value={data[0].value?.toFixed(0)} fontSize='2.5rem' offset={0} position='center' />
+                            <Label fill={data[0].value! >= 90 ? 'var(--successColor)' : data[0].value! >= 50 && data[0].value! < 90 ? 'var(--warningColor)' : data[0].value! >= 1 && data[0].value! < 50 ? 'var(--failedColor)' : '#888'} value={data[0].value} fontSize='2.5rem' offset={0} position='center' />
                         </Pie>
                     </PieChart>
                 </ResponsiveContainer>
