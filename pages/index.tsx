@@ -14,6 +14,7 @@ import { onFetchSEOReport } from 'store/reducers/lighthouse/seoSlice';
 import { onFetchPWAReport } from 'store/reducers/lighthouse/pwaSlice';
 import { onFetchBestPracticesReport } from 'store/reducers/lighthouse/bestPracticesSlice';
 import { onFetchAccessibilityReport } from 'store/reducers/lighthouse/accessibilitySlice';
+import SEO from 'layouts/SEO';
 
 // https://www.webimizr.com
 const Homepage: NextPage = () => {
@@ -29,15 +30,25 @@ const Homepage: NextPage = () => {
     }
   }, [dispatch, router.query.url, router.query.emulation])
   return (
-    <main className='main'>
-      <SearchBar />
-      <AuditProgressBar />
-      <ConfigurationBar
-        specifications={router.query.emulation === 'mobile' ? MobileSpecifications : DesktopSpecifications}
+    <>
+      <SEO
+        author='Webimizr'
+        canonical=''
+        keywords='Vitals, Performance, SEO, PWA, Accessibility, Best Practices, Speed, Optimize, Improve, Innovate'
+        title='Webimizr | Local Performance Insights'
+        description='Test your webpage performance to assess failures and to improve your webpage overall performance.'
+        subject='Performance'
       />
-      <ReportSummary />
-      <AuditTablet />
-    </main>
+      <main className='main'>
+        <SearchBar />
+        <AuditProgressBar />
+        <ConfigurationBar
+          specifications={router.query.emulation === 'mobile' ? MobileSpecifications : DesktopSpecifications}
+        />
+        <ReportSummary />
+        <AuditTablet />
+      </main>
+    </>
   )
 }
 

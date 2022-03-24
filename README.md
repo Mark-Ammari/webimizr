@@ -42,6 +42,8 @@ This project was designed to demonstrate:
 
 ## Release History
 
+* 2.0.1
+    * added SEO logic.
 * 2.0.0
     * Used promises to fix request timeout and using googles lighthouse API instead of puppeteer and chrome-launcher.
 * 1.0.1
