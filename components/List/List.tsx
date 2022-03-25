@@ -55,7 +55,8 @@ const List: React.FC<Props> = ({ children, radius, margin, padding, isCollapsibl
                 {`#dropdown {
                     box-shadow: ${isShadow ? 'var(--shadow)' : 'none'};
                     margin: ${margin || 0};
-                    border-radius ${radius ? 'var(--radius)' : 0}
+                    border-radius ${radius ? 'var(--radius)' : 0};
+                    height: auto;
                 }
                 #list {
                     padding: ${padding || 0};
@@ -69,6 +70,7 @@ const List: React.FC<Props> = ({ children, radius, margin, padding, isCollapsibl
                     z-index: 3;
                     border-radius: var(--radius);
                     max-width: ${maxWidth || '100%'};
+                    height: auto;
                     border-radius ${radius ? 'var(--radius)' : 0}
                 }
                 #arrow {
@@ -85,7 +87,7 @@ const List: React.FC<Props> = ({ children, radius, margin, padding, isCollapsibl
                 .expand-list {
                     visibility: show;
                     opacity: 1;
-                    max-height: 300px;
+                    max-height: 1000px;
                 }
                 .collapse-list {
                     visibility: hidden;

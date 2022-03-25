@@ -40,7 +40,9 @@ const ListItem: React.FC<Props> = ({ children, isShadow, activeLink, startAdornm
                     justify-content: ${endAdornment ? 'space-between' : 'flex-start'};
                     background-color: ${activeLink ? 'rgba(0, 0, 0, 0.12)' : 'transparent'};
                     max-width: ${maxWidth || '100%'};
-                    box-shadow: ${isShadow ? 'var(--shadow)' : 'none'}
+                    height: inherit;
+                    box-shadow: ${isShadow ? 'var(--shadow)' : 'none'};
+                    
                 }
                 #list-item:hover {
                     background-color: rgba(0, 0, 0, 0.06);

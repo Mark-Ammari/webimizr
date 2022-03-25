@@ -42,6 +42,8 @@ This project was designed to demonstrate:
 
 ## Release History
 
+* 2.0.3
+    * fixed height on auditlist which had text overflow.
 * 2.0.2
     * fixed endpoints and audit bullets will light up correctly.
 * 2.0.1
