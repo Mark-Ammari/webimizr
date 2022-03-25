@@ -41,7 +41,7 @@ const Score: React.FC<Props> = ({ children, score = null, fontSize, margin }) =>
                     display: inline;
                     margin: ${margin || 0};
                     font-size: ${fontSize || '1rem'};
-                    color: ${!query.query.url ? '#ccc' : (loadingPerformance || loadingSEO || loadingPWA || loadingBestPractices || loadingAccessibiility) ? '#ccc' : (errorPerformance || !performanceResult['success']) || (errorSEO || !seoResult['success']) || (errorPWA || !pwaResult['success']) || (errorBestPractices || !bestPracticesResult['success']) || (errorAccessibility || !accessibilityResult['success']) ? 'var(--failedColor)' : score === null ? '#ccc' : score >= 0.90 ? 'var(--successColor)' : score >= 0.50 && score < 0.90 ? 'var(--warningColor)' : 'var(--failedColor)'}
+                    color: ${!query.query.url ? '#ccc' : loadingPerformance ? '#ccc' : errorPerformance || !performanceResult['success'] ? 'var(--failedColor)' : score === null ? '#ccc' : score >= 0.90 ? 'var(--successColor)' : score >= 0.50 && score < 0.90 ? 'var(--warningColor)' : 'var(--failedColor)'}
                 }`}
             </style>
         </>

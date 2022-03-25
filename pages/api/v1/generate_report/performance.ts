@@ -112,37 +112,37 @@ const performanceAPI = async (req: NextApiRequest, res: NextApiResponse<Performa
                 title: data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["title"],
                 description: data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["description"],
                 score: data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["mainthread-work-breakdown"]["displayValue"] || ""
             },
             "bootup-time": {
                 title: data["lighthouseResult"]["audits"]["bootup-time"]["title"],
                 description: data["lighthouseResult"]["audits"]["bootup-time"]["description"],
                 score: data["lighthouseResult"]["audits"]["bootup-time"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["bootup-time"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["bootup-time"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["bootup-time"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["bootup-time"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["bootup-time"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["bootup-time"]["displayValue"] || ""
             },
             "uses-rel-preload": {
                 title: data["lighthouseResult"]["audits"]["uses-rel-preload"]["title"],
                 description: data["lighthouseResult"]["audits"]["uses-rel-preload"]["description"],
                 score: data["lighthouseResult"]["audits"]["uses-rel-preload"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["uses-rel-preload"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["uses-rel-preload"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-rel-preload"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["uses-rel-preload"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["uses-rel-preload"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-rel-preload"]["displayValue"] || ""
             },
             "uses-rel-preconnect": {
                 title: data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["title"],
                 description: data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["description"],
                 score: data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-rel-preconnect"]["displayValue"] || ""
             },
             "font-display": {
                 title: data["lighthouseResult"]["audits"]["font-display"]["title"],
                 description: data["lighthouseResult"]["audits"]["font-display"]["description"],
                 score: data["lighthouseResult"]["audits"]["font-display"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["font-display"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["font-display"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["font-display"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["font-display"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["font-display"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["font-display"]["displayValue"] || ""
             },
             "network-rtt": {
                 title: data["lighthouseResult"]["audits"]["network-rtt"]["title"],
                 description: data["lighthouseResult"]["audits"]["network-rtt"]["description"],
                 score: data["lighthouseResult"]["audits"]["network-rtt"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["network-rtt"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["network-rtt"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["network-rtt"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["network-rtt"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["network-rtt"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["network-rtt"]["displayValue"] || ""
             },
             "performance-budget": {
                 title: data["lighthouseResult"]["audits"]["performance-budget"]["title"],
@@ -166,19 +166,19 @@ const performanceAPI = async (req: NextApiRequest, res: NextApiResponse<Performa
                 title: data["lighthouseResult"]["audits"]["third-party-summary"]["title"],
                 description: data["lighthouseResult"]["audits"]["third-party-summary"]["description"],
                 score: data["lighthouseResult"]["audits"]["third-party-summary"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["third-party-summary"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["third-party-summary"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["third-party-summary"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["third-party-summary"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["third-party-summary"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["third-party-summary"]["displayValue"] || ""
             },
             "largest-contentful-paint-element": {
                 title: data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["title"],
                 description: data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["description"],
                 score: data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["largest-contentful-paint-element"]["displayValue"] || ""
             },
             "third-party-facades": {
                 title: data["lighthouseResult"]["audits"]["third-party-facades"]["title"],
                 description: data["lighthouseResult"]["audits"]["third-party-facades"]["description"],
                 score: data["lighthouseResult"]["audits"]["third-party-facades"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["third-party-facades"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["third-party-facades"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["third-party-facades"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["third-party-facades"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["third-party-facades"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["third-party-facades"]["displayValue"] || ""
             },
             "lcp-lazy-loaded": {
                 title: data["lighthouseResult"]["audits"]["lcp-lazy-loaded"]["title"],
@@ -190,169 +190,169 @@ const performanceAPI = async (req: NextApiRequest, res: NextApiResponse<Performa
                 title: data["lighthouseResult"]["audits"]["layout-shift-elements"]["title"],
                 description: data["lighthouseResult"]["audits"]["layout-shift-elements"]["description"],
                 score: data["lighthouseResult"]["audits"]["layout-shift-elements"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["layout-shift-elements"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["layout-shift-elements"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["layout-shift-elements"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["layout-shift-elements"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["layout-shift-elements"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["layout-shift-elements"]["displayValue"] || ""
             },
             "long-tasks": {
                 title: data["lighthouseResult"]["audits"]["long-tasks"]["title"],
                 description: data["lighthouseResult"]["audits"]["long-tasks"]["description"],
                 score: data["lighthouseResult"]["audits"]["long-tasks"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["long-tasks"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["long-tasks"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["long-tasks"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["long-tasks"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["long-tasks"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["long-tasks"]["displayValue"] || ""
             },
             "no-unload-listeners": {
                 title: data["lighthouseResult"]["audits"]["no-unload-listeners"]["title"],
                 description: data["lighthouseResult"]["audits"]["no-unload-listeners"]["description"],
                 score: data["lighthouseResult"]["audits"]["no-unload-listeners"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["no-unload-listeners"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["no-unload-listeners"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["no-unload-listeners"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["no-unload-listeners"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["no-unload-listeners"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["no-unload-listeners"]["displayValue"] || ""
             },
             "non-composited-animations": {
                 title: data["lighthouseResult"]["audits"]["non-composited-animations"]["title"],
                 description: data["lighthouseResult"]["audits"]["non-composited-animations"]["description"],
                 score: data["lighthouseResult"]["audits"]["non-composited-animations"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["non-composited-animations"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["no-composited-animations"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["non-composited-animations"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["non-composited-animations"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["no-composited-animations"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["non-composited-animations"]["displayValue"] || ""
             },
             "unsized-images": {
                 title: data["lighthouseResult"]["audits"]["unsized-images"]["title"],
                 description: data["lighthouseResult"]["audits"]["unsized-images"]["description"],
                 score: data["lighthouseResult"]["audits"]["unsized-images"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["unsized-images"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["unsized-images"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unsized-images"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["unsized-images"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["unsized-images"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unsized-images"]["displayValue"] || ""
             },
             "preload-lcp-image": {
                 title: data["lighthouseResult"]["audits"]["preload-lcp-image"]["title"],
                 description: data["lighthouseResult"]["audits"]["preload-lcp-image"]["description"],
                 score: data["lighthouseResult"]["audits"]["preload-lcp-image"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["preload-lcp-image"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["preload-lcp-image"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["preload-lcp-image"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["preload-lcp-image"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["preload-lcp-image"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["preload-lcp-image"]["displayValue"] || ""
             },
             "script-treemap-data": {
                 title: data["lighthouseResult"]["audits"]["script-treemap-data"]["title"],
                 description: data["lighthouseResult"]["audits"]["script-treemap-data"]["description"],
                 score: data["lighthouseResult"]["audits"]["script-treemap-data"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["script-treemap-data"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["script-treemap-data"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["script-treemap-data"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["script-treemap-data"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["script-treemap-data"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["script-treemap-data"]["displayValue"] || ""
             },
             "uses-long-cache-ttl": {
                 title: data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["title"],
                 description: data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["description"],
                 score: data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-long-cache-ttl"]["displayValue"] || ""
             },
             "total-byte-weight": {
                 title: data["lighthouseResult"]["audits"]["total-byte-weight"]["title"],
                 description: data["lighthouseResult"]["audits"]["total-byte-weight"]["description"],
                 score: data["lighthouseResult"]["audits"]["total-byte-weight"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["total-byte-weight"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["total-byte-weight"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["total-byte-weight"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["total-byte-weight"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["total-byte-weight"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["total-byte-weight"]["displayValue"] || ""
             },
             "offscreen-images": {
                 title: data["lighthouseResult"]["audits"]["offscreen-images"]["title"],
                 description: data["lighthouseResult"]["audits"]["offscreen-images"]["description"],
                 score: data["lighthouseResult"]["audits"]["offscreen-images"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["offscreen-images"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["offscreen-images"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["offscreen-images"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["offscreen-images"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["offscreen-images"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["offscreen-images"]["displayValue"] || ""
             },
             "render-blocking-resources": {
                 title: data["lighthouseResult"]["audits"]["render-blocking-resources"]["title"],
                 description: data["lighthouseResult"]["audits"]["render-blocking-resources"]["description"],
                 score: data["lighthouseResult"]["audits"]["render-blocking-resources"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["render-blocking-resources"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["render-blocking-resources"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["render-blocking-resources"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["render-blocking-resources"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["render-blocking-resources"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["render-blocking-resources"]["displayValue"] || ""
             },
             "unminified-css": {
                 title: data["lighthouseResult"]["audits"]["unminified-css"]["title"],
                 description: data["lighthouseResult"]["audits"]["unminified-css"]["description"],
                 score: data["lighthouseResult"]["audits"]["unminified-css"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["unminified-css"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["unminified-css"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unminified-css"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["unminified-css"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["unminified-css"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unminified-css"]["displayValue"] || ""
             },
             "unminified-javascript": {
                 title: data["lighthouseResult"]["audits"]["unminified-javascript"]["title"],
                 description: data["lighthouseResult"]["audits"]["unminified-javascript"]["description"],
                 score: data["lighthouseResult"]["audits"]["unminified-javascript"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["unminified-javascript"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["unminified-javascript"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unminified-javascript"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["unminified-javascript"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["unminified-javascript"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unminified-javascript"]["displayValue"] || ""
             },
             "unused-css-rules": {
                 title: data["lighthouseResult"]["audits"]["unused-css-rules"]["title"],
                 description: data["lighthouseResult"]["audits"]["unused-css-rules"]["description"],
                 score: data["lighthouseResult"]["audits"]["unused-css-rules"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["unused-css-rules"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["unused-css-rules"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unused-css-rules"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["unused-css-rules"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["unused-css-rules"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unused-css-rules"]["displayValue"] || ""
             },
             "unused-javascript": {
                 title: data["lighthouseResult"]["audits"]["unused-javascript"]["title"],
                 description: data["lighthouseResult"]["audits"]["unused-javascript"]["description"],
                 score: data["lighthouseResult"]["audits"]["unused-javascript"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["unused-javascript"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["unused-javascript"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unused-javascript"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["unused-javascript"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["unused-javascript"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["unused-javascript"]["displayValue"] || ""
             },
             "modern-image-formats": {
                 title: data["lighthouseResult"]["audits"]["modern-image-formats"]["title"],
                 description: data["lighthouseResult"]["audits"]["modern-image-formats"]["description"],
                 score: data["lighthouseResult"]["audits"]["modern-image-formats"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["modern-image-formats"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["modern-image-formats"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["modern-image-formats"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["modern-image-formats"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["modern-image-formats"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["modern-image-formats"]["displayValue"] || ""
             },
             "uses-optimized-images": {
                 title: data["lighthouseResult"]["audits"]["uses-optimized-images"]["title"],
                 description: data["lighthouseResult"]["audits"]["uses-optimized-images"]["description"],
                 score: data["lighthouseResult"]["audits"]["uses-optimized-images"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["uses-optimized-images"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["uses-optimized-images"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-optimized-images"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["uses-optimized-images"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["uses-optimized-images"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-optimized-images"]["displayValue"] || ""
             },
             "uses-text-compression": {
                 title: data["lighthouseResult"]["audits"]["uses-text-compression"]["title"],
                 description: data["lighthouseResult"]["audits"]["uses-text-compression"]["description"],
                 score: data["lighthouseResult"]["audits"]["uses-text-compression"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["uses-text-compression"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["uses-text-compression"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-text-compression"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["uses-text-compression"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["uses-text-compression"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-text-compression"]["displayValue"] || ""
             },
             "uses-responsive-images": {
                 title: data["lighthouseResult"]["audits"]["uses-responsive-images"]["title"],
                 description: data["lighthouseResult"]["audits"]["uses-responsive-images"]["description"],
                 score: data["lighthouseResult"]["audits"]["uses-responsive-images"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["uses-responsive-images"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["uses-responsive-images"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-responsive-images"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["uses-responsive-images"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["uses-responsive-images"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-responsive-images"]["displayValue"] || ""
             },
             "efficient-animated-content": {
                 title: data["lighthouseResult"]["audits"]["efficient-animated-content"]["title"],
                 description: data["lighthouseResult"]["audits"]["efficient-animated-content"]["description"],
                 score: data["lighthouseResult"]["audits"]["efficient-animated-content"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["efficient-animated-content"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["efficient-animated-content"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["efficient-animated-content"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["efficient-animated-content"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["efficient-animated-content"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["efficient-animated-content"]["displayValue"] || ""
             },
             "duplicated-javascript": {
                 title: data["lighthouseResult"]["audits"]["duplicated-javascript"]["title"],
                 description: data["lighthouseResult"]["audits"]["duplicated-javascript"]["description"],
                 score: data["lighthouseResult"]["audits"]["duplicated-javascript"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["duplicated-javascript"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["duplicated-javascript"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["duplicated-javascript"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["duplicated-javascript"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["duplicated-javascript"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["duplicated-javascript"]["displayValue"] || ""
             },
             "legacy-javascript": {
                 title: data["lighthouseResult"]["audits"]["legacy-javascript"]["title"],
                 description: data["lighthouseResult"]["audits"]["legacy-javascript"]["description"],
                 score: data["lighthouseResult"]["audits"]["legacy-javascript"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["legacy-javascript"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["legacy-javascript"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["legacy-javascript"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["legacy-javascript"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["legacy-javascript"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["legacy-javascript"]["displayValue"] || ""
             },
             "dom-size": {
                 title: data["lighthouseResult"]["audits"]["dom-size"]["title"],
                 description: data["lighthouseResult"]["audits"]["dom-size"]["description"],
                 score: data["lighthouseResult"]["audits"]["dom-size"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["dom-size"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["dom-size"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["dom-size"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["dom-size"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["dom-size"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["dom-size"]["displayValue"] || ""
             },
             "no-document-write": {
                 title: data["lighthouseResult"]["audits"]["no-document-write"]["title"],
                 description: data["lighthouseResult"]["audits"]["no-document-write"]["description"],
                 score: data["lighthouseResult"]["audits"]["no-document-write"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["no-document-write"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["no-document-write"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["no-document-write"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["no-document-write"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["no-document-write"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["no-document-write"]["displayValue"] || ""
             },
             "uses-passive-event-listeners": {
                 title: data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["title"],
                 description: data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["description"],
                 score: data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["uses-passive-event-listeners"]["displayValue"] || ""
             },
             "main-thread-tasks": {
                 title: data["lighthouseResult"]["audits"]["main-thread-tasks"]["title"],
                 description: data["lighthouseResult"]["audits"]["main-thread-tasks"]["description"],
                 score: data["lighthouseResult"]["audits"]["main-thread-tasks"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["main-thread-tasks"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["main-thread-tasks"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["main-thread-tasks"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["main-thread-tasks"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["main-thread-tasks"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["main-thread-tasks"]["displayValue"] || ""
             },
             "network-server-latency": {
                 title: data["lighthouseResult"]["audits"]["network-server-latency"]["title"],
                 description: data["lighthouseResult"]["audits"]["network-server-latency"]["description"],
                 score: data["lighthouseResult"]["audits"]["network-server-latency"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["network-server-latency"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["network-server-latency"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["network-server-latency"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["network-server-latency"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["network-server-latency"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["network-server-latency"]["displayValue"] || ""
             },
             "network-requests": {
                 title: data["lighthouseResult"]["audits"]["network-requests"]["title"],
                 description: data["lighthouseResult"]["audits"]["network-requests"]["description"],
                 score: data["lighthouseResult"]["audits"]["network-requests"]["score"],
-                displayValue: data["lighthouseResult"]["audits"]["network-requests"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." :  data["lighthouseResult"]["audits"]["network-requests"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["network-requests"]["displayValue"] || ""
+                displayValue: data["lighthouseResult"]["audits"]["network-requests"]["scoreDisplayMode"] === "notApplicable" ? "Not Applicable." : data["lighthouseResult"]["audits"]["network-requests"]["scoreDisplayMode"] === "manual" ? "Manual Check Needed." : data["lighthouseResult"]["audits"]["network-requests"]["displayValue"] || ""
             },
             percentage: (data["lighthouseResult"]["categories"]["performance"]["score"] * 100) || 0,
             diagnostics: {
@@ -762,10 +762,8 @@ const performanceAPI = async (req: NextApiRequest, res: NextApiResponse<Performa
         }
         // This URL Blocks crawling or URL is incorrect
         if (error.response) {
-            if (error.response.status === 500) {
-                result.message = "The URL entered may be invalid or the webpage does not allow crawling."
-                res.status(500).send(result)
-            }
+            result.message = "The URL entered may be invalid or the webpage does not allow crawling."
+            res.status(500).send(result)
         } else {
             result.message = "The robot took too long to crawl your webpage. Try optimizing your website's performance."
             res.status(400).send(result)

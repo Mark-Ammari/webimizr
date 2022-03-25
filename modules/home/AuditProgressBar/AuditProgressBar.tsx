@@ -45,7 +45,7 @@ const AuditProgressBar: React.FC<Props> = ({ url, jobResult }) => {
                     <div className='progress-item'>
                         <h2 className='title'>Job Queue</h2>
                         <div id='job-result'>
-                            <AuditBullet margin='auto .5rem auto auto' />
+                            <AuditBullet type='load' margin='auto .5rem auto auto' />
                             <p className='subheading'>{!query.query.url ? 'Idle' : (loadingPerformance || loadingSEO || loadingPWA || loadingBestPractices || loadingAccessibiility) ? 'Loading' : (errorPerformance || !performanceResult['success']) || (errorSEO || !seoResult['success']) || (errorPWA || !pwaResult['success']) || (errorBestPractices || !bestPracticesResult['success']) || (errorAccessibility || !accessibilityResult['success']) ? 'Failed' : 'Success'}</p>
                         </div>
                     </div>

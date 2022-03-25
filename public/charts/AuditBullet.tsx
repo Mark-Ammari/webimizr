@@ -17,9 +17,11 @@ interface BulletProps {
     left?: string | number | undefined
     score?: number | null | undefined
     type?: "score" | "load" | undefined
+    loading?: boolean
+    error?: boolean
 }
 
-const AuditBullet: React.FC<IconProps & BulletProps> = ({ margin, position, top, right, bottom, left, type = 'load', score = null }) => {
+const AuditBullet: React.FC<IconProps & BulletProps> = ({ margin, position, loading, error, top, right, bottom, left, type = 'load', score = null }) => {
     const query = useRouter()
     // const loading = useSelector(loadLighthouse)
     // const report = useSelector(lighthouseData)
@@ -48,7 +50,7 @@ const AuditBullet: React.FC<IconProps & BulletProps> = ({ margin, position, top,
                     <circle cx="50" cy="50" r="50" />
                 </svg>
                 :
-                <svg className='icon' width='7px' height='7px' fill={!query.query.url ? '#ccc' : (loadingPerformance || loadingSEO || loadingPWA || loadingBestPractices || loadingAccessibiility) ? '#ccc' : (errorPerformance || !performanceResult['success']) || (errorSEO || !seoResult['success']) || (errorPWA || !pwaResult['success']) || (errorBestPractices || !bestPracticesResult['success']) || (errorAccessibility || !accessibilityResult['success']) ? 'var(--failedColor)' : score === null ? '#ccc' : score >= 0.90 ? 'var(--successColor)' : score >= 0.50 && score < 0.90 ? 'var(--warningColor)' : 'var(--failedColor)'} focusable="false" aria-hidden="true" viewBox="0 0 100 100" data-testid="AppsIcon">
+                <svg className='icon' width='7px' height='7px' fill={!query.query.url ? '#ccc' : loading ? '#ccc' : error ? 'var(--failedColor)' : score === null ? '#ccc' : score >= 0.90 ? 'var(--successColor)' : score >= 0.50 && score < 0.90 ? 'var(--warningColor)' : 'var(--failedColor)'} focusable="false" aria-hidden="true" viewBox="0 0 100 100" data-testid="AppsIcon">
                     <circle cx="50" cy="50" r="50" />
                 </svg>
             }

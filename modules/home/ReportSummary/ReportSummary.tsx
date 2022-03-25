@@ -4,7 +4,7 @@ import View from 'components/View';
 import PieGraph from 'public/charts/PieGraph';
 import { useSelector } from 'react-redux';
 import AuditBullet from 'public/charts/AuditBullet';
-import { loadPerformance, performanceData } from 'store/reducers/lighthouse/performanceSlice';
+import { loadPerformance, performanceData, performanceError } from 'store/reducers/lighthouse/performanceSlice';
 import { accessibilityData, loadAccessibility } from 'store/reducers/lighthouse/accessibilitySlice';
 import { bestPracticesData, loadBestPractices } from 'store/reducers/lighthouse/bestPracticesSlice';
 import { loadPWA, pwaData } from 'store/reducers/lighthouse/pwaSlice';
@@ -13,6 +13,7 @@ import { loadSEO, seoData } from 'store/reducers/lighthouse/seoSlice';
 const ReportSummary: React.FC = () => {
     const loadingPerformance = useSelector(loadPerformance);
     const performanceResult = useSelector(performanceData);
+    const errorPerformance = useSelector(performanceError);
     const loadingSEO = useSelector(loadSEO);
     const seoResult = useSelector(seoData);
     const loadingPWA = useSelector(loadPWA);

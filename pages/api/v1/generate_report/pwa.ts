@@ -158,10 +158,8 @@ const PWAAPI = async (req: NextApiRequest, res: NextApiResponse<PWA>) => {
         }
         // This URL Blocks crawling or URL is incorrect
         if (error.response) {
-            if (error.response.status === 500) {
-                result.message = "The URL entered may be invalid or the webpage does not allow crawling."
-                res.status(500).send(result)
-            }
+            result.message = "The URL entered may be invalid or the webpage does not allow crawling."
+            res.status(500).send(result)
         } else {
             result.message = "The robot took too long to crawl your webpage. Try optimizing your website's performance."
             res.status(400).send(result)

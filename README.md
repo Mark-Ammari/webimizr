@@ -42,6 +42,8 @@ This project was designed to demonstrate:
 
 ## Release History
 
+* 2.0.2
+    * fixed endpoints and audit bullets will light up correctly.
 * 2.0.1
     * added SEO logic.
 * 2.0.0
