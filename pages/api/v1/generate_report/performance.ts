@@ -382,7 +382,7 @@ const performanceAPI = async (req: NextApiRequest, res: NextApiResponse<Performa
                 "title": "Has a `<meta name=\"viewport\">` tag with `width` or `initial-scale`",
                 "description": "A `<meta name=\"viewport\">` not only optimizes your app for mobile screen sizes, but also prevents [a 300 millisecond delay to user input](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away). [Learn more](https://web.dev/viewport/).",
                 "score": 0,
-                "displayValue": "0%"
+                "displayValue": ""
             },
             "first-contentful-paint": {
                 "title": "First Contentful Paint",
